@@ -1,7 +1,7 @@
-import { TextField, Button, Container, Box } from "@mui/material";
+import { Box, Button, Container, TextField } from "@mui/material";
 import { useBugForm } from "../../hooks/useBugForm";
 
-export const BugTrackingForm = (): JSX.Element => {
+export const BugTrackingForm: React.FC = () => {
 	const { bug, handleInputChange, handleTextAreaChange, handleSubmit } = useBugForm();
 
 	return (

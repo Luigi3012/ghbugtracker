@@ -6,7 +6,7 @@ export type BugListOwnProps = {
 	bugs: Bug[];
 };
 
-export const BugList = ({ bugs }: BugListOwnProps): JSX.Element => {
+export const BugList: React.FC<BugListOwnProps> = ({ bugs }) => {
 	const bugListItems = useMemo(() => {
 		return bugs.map(bug => {
 			return (

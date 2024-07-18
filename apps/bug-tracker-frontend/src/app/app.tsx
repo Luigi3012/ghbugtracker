@@ -1,11 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { BugTrackingForm } from "../components/bugTrackingForm";
-import styles from "./app.module.scss";
+import BugsPage from "../pages/bugsPage";
 
 export function App() {
 	return (
 		<div>
-			<BugTrackingForm></BugTrackingForm>
+			<BugsPage />
 		</div>
 	);
 }
