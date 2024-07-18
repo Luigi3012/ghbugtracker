@@ -4,7 +4,18 @@ import { useEffect, useState } from "react";
 
 export const useBugList = () => {
 	const [bugs, setBugs] = useState<Bug[]>([]);
-	const [bugsLoadError, setBugsLoadError] = useState<string | undefined>(undefined);
+	const [bugsListError, setBugsListError] = useState<string | undefined>(undefined);
+
+	const deleteBugById = async (id: string): Promise<boolean> => {
+		try {
+			return deleteBugById(id);
+		} catch (error) {
+			const errorMsg = "Failed to load bugs. " + error;
+			console.error(errorMsg);
+			setBugsListError(errorMsg);
+		}
+		return false;
+	};
 
 	useEffect(() => {
 		const loadBugsFromApi = async () => {
@@ -13,12 +24,12 @@ export const useBugList = () => {
 			} catch (error) {
 				const errorMsg = "Failed to load bugs. " + error;
 				console.error(errorMsg);
-				setBugsLoadError(errorMsg);
+				setBugsListError(errorMsg);
 			}
 		};
 
 		loadBugsFromApi();
 	}, []);
 
-	return { bugs, bugsLoadError };
+	return { bugs, bugsListError, deleteBugById };
 };
