@@ -1,32 +1,31 @@
 import { Box, Button, Container, TextField } from "@mui/material";
 import { useBugForm } from "../../hooks/useBugForm";
+import style from "./bugTrackingForm.module.scss";
 
 export const BugTrackingForm: React.FC = () => {
 	const { bug, handleInputChange, handleTextAreaChange, handleSubmit } = useBugForm();
 
 	return (
-		<div>
-			<h1>Bug Tracking Form</h1>
-			<Container maxWidth="sm">
-				<Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
-					<TextField fullWidth label="Parent ID" name="parentId" value={bug.parentId} onChange={handleInputChange} margin="normal" />
-					<TextField
-						fullWidth
-						label="Description"
-						name="description"
-						value={bug.description}
-						onChange={handleInputChange}
-						margin="normal"
-						multiline
-						rows={4}
-						required={true}
-					/>
-					<TextField fullWidth label="Link" name="link" value={bug.link} onChange={handleInputChange} margin="normal" required={true} />
-					<Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
-						Submit
-					</Button>
-				</Box>
-			</Container>
-		</div>
+		<Container className={style.wrapper}>
+			<Box component="form" onSubmit={handleSubmit}>
+				<h2 className={style.title}>Report new bug</h2>
+				<TextField
+					fullWidth
+					label="Description"
+					name="description"
+					value={bug.description}
+					onChange={handleInputChange}
+					margin="normal"
+					multiline
+					rows={4}
+					required={true}
+				/>
+				<TextField fullWidth label="Link" name="link" value={bug.link} onChange={handleInputChange} margin="normal" required={true} />
+				<TextField fullWidth label="Parent ID" name="parentId" value={bug.parentId} onChange={handleInputChange} margin="normal" />
+				<Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
+					Submit
+				</Button>
+			</Box>
+		</Container>
 	);
 };
