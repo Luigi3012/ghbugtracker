@@ -1,0 +1,9 @@
+{
+	"name": "bug-tracker-frontend",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "apps/bug-tracker-frontend/src",
+	"projectType": "application",
+	"tags": [],
+	"// targets": "to see all targets run: nx show project bug-tracker-frontend --web",
+	"targets": {}
+}

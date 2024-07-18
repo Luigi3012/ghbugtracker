@@ -1,0 +1,19 @@
+{
+  "name": "ghbugtracker-types",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ghbugtracker-types/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/ghbugtracker-types",
+        "main": "libs/ghbugtracker-types/src/index.ts",
+        "tsConfig": "libs/ghbugtracker-types/tsconfig.lib.json",
+        "assets": ["libs/ghbugtracker-types/*.md"]
+      }
+    }
+  }
+}
