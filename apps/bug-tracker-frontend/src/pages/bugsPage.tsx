@@ -6,7 +6,7 @@ import { useBugList } from "../hooks/useBugList";
 import style from "./bugsPage.module.scss";
 
 const BugsPage: React.FC = () => {
-	const { bugs, bugsListError, deleteBugById } = useBugList();
+	const { bugs, bugsListError, removeBugById } = useBugList();
 
 	return (
 		<div>
@@ -23,7 +23,7 @@ const BugsPage: React.FC = () => {
 				</Grid>
 				<Grid item xs={6}>
 					<Paper>
-						<BugList bugs={bugs} />
+						<BugList bugs={bugs} removeBugById={removeBugById} />
 					</Paper>
 				</Grid>
 			</Grid>

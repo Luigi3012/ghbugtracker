@@ -6,17 +6,18 @@ import style from "./bugList.module.scss";
 
 export type BugListOwnProps = {
 	bugs: Bug[];
+	removeBugById: (id: string) => Promise<boolean>;
 };
 
-export const BugList: React.FC<BugListOwnProps> = ({ bugs }) => {
+export const BugList: React.FC<BugListOwnProps> = ({ bugs, removeBugById }) => {
 	const bugListItems = useMemo(() => {
 		return bugs.map(bug => {
 			return (
-				<ListItem>
+				<ListItem key={bug.id}>
 					<ListItemText primary={`${bug.id}: ${bug.description}`} secondary={bug.link}>
 						<p>{bug.status}</p>
 					</ListItemText>
-					<ListItemIcon title={"Delete"} onClick={() => console.log("DELETE", bug.id)} sx={{ "&:hover": { color: "black" } }}>
+					<ListItemIcon title={"Delete"} onClick={() => removeBugById(bug.id)} sx={{ "&:hover": { color: "black" } }}>
 						<DeleteForeverIcon />
 					</ListItemIcon>
 				</ListItem>

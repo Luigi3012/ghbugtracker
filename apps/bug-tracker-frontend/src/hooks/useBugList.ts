@@ -1,4 +1,4 @@
-import { loadBugs } from "@ghbugtracker/ghbugtracker-service";
+import { deleteBugById, loadBugs } from "@ghbugtracker/ghbugtracker-service";
 import type { Bug } from "@ghbugtracker/ghbugtracker-types";
 import { useEffect, useState } from "react";
 
@@ -6,7 +6,7 @@ export const useBugList = () => {
 	const [bugs, setBugs] = useState<Bug[]>([]);
 	const [bugsListError, setBugsListError] = useState<string | undefined>(undefined);
 
-	const deleteBugById = async (id: string): Promise<boolean> => {
+	const removeBugById = async (id: string): Promise<boolean> => {
 		try {
 			return deleteBugById(id);
 		} catch (error) {
@@ -31,5 +31,5 @@ export const useBugList = () => {
 		loadBugsFromApi();
 	}, []);
 
-	return { bugs, bugsListError, deleteBugById };
+	return { bugs, bugsListError, removeBugById };
 };
