@@ -6,11 +6,12 @@ import { useBugList } from "../hooks/useBugList";
 import style from "./bugsPage.module.scss";
 
 const BugsPage: React.FC = () => {
-	const { bugs, bugsListError, removeBugById } = useBugList();
+	const { bugs, bugsError, bugsSuccess, removeBugById, addBug } = useBugList();
 
 	return (
 		<div>
-			{bugsListError && <Alert severity="error">{bugsListError}</Alert>}
+			{bugsError && <Alert severity="error">{bugsError}</Alert>}
+			{bugsSuccess && <Alert severity="success">{bugsSuccess}</Alert>}
 			<div className={style.welcome}>
 				<h1>Bug Tracker Application</h1>
 				<p>Welcome to bug tracker application. Simple application to report and view bugs, born as react exercise.</p>
@@ -18,7 +19,7 @@ const BugsPage: React.FC = () => {
 			<Grid container spacing={2}>
 				<Grid item xs={6}>
 					<Paper>
-						<BugTrackingForm />
+						<BugTrackingForm addBug={addBug} />
 					</Paper>
 				</Grid>
 				<Grid item xs={6}>

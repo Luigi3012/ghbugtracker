@@ -1,9 +1,13 @@
+import type { Bug } from "@ghbugtracker/ghbugtracker-types";
 import { Box, Button, Container, TextField } from "@mui/material";
 import { useBugForm } from "../../hooks/useBugForm";
 import style from "./bugTrackingForm.module.scss";
+export type BugTrackingFormOwnProps = {
+	addBug: (bug: Bug) => void;
+};
 
-export const BugTrackingForm: React.FC = () => {
-	const { bug, handleInputChange, handleTextAreaChange, handleSubmit } = useBugForm();
+export const BugTrackingForm: React.FC<BugTrackingFormOwnProps> = ({ addBug }: BugTrackingFormOwnProps) => {
+	const { bug, handleInputChange, handleTextAreaChange, handleSubmit } = useBugForm(addBug);
 
 	return (
 		<Container className={style.wrapper}>

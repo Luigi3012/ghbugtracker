@@ -1,8 +1,8 @@
-import { ChangeEvent, FormEvent, useState } from "react";
-import { Bug } from "@ghbugtracker/ghbugtracker-types";
 import { createEmptyBug } from "@ghbugtracker/ghbugtracker-service";
+import { Bug } from "@ghbugtracker/ghbugtracker-types";
+import { ChangeEvent, FormEvent, useState } from "react";
 
-export const useBugForm = () => {
+export const useBugForm = (addBug: (bug: Bug) => void) => {
 	const [bug, setBug] = useState<Bug>(createEmptyBug());
 
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -16,8 +16,7 @@ export const useBugForm = () => {
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		if (bug.link && bug.description) {
-			// save bug using service and clear form
-			setBug(createEmptyBug());
+			addBug(bug);
 		}
 	};
 

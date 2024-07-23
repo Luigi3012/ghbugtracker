@@ -1,3 +1,3 @@
 export function ghbugtrackerService(): string {
-  return "ghbugtracker-service";
+	return "ghbugtracker-service";
 }

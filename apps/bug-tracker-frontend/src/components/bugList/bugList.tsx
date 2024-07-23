@@ -6,7 +6,7 @@ import style from "./bugList.module.scss";
 
 export type BugListOwnProps = {
 	bugs: Bug[];
-	removeBugById: (id: string) => Promise<boolean>;
+	removeBugById: (id: string) => Promise<void>;
 };
 
 export const BugList: React.FC<BugListOwnProps> = ({ bugs, removeBugById }) => {
