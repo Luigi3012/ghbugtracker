@@ -1,0 +1,6 @@
+id,description,link,parentId,creationTimestamp,status
+BUG-001,Null pointer exception on login,http://example.com/bugs/BUG-001,,2024-07-20 10:15:00,Open
+BUG-002,UI alignment issue on dashboard,http://example.com/bugs/BUG-002,BUG-001,2024-07-21 14:30:00,In Progress
+BUG-003,Database connection timeout,http://example.com/bugs/BUG-003,,2024-07-22 09:00:00,Closed
+BUG-004,Unexpected logout on profile update,http://example.com/bugs/BUG-004,BUG-003,2024-07-23 11:45:00,Resolved
+BUG-005,Slow response time on search feature,http://example.com/bugs/BUG-005,,2024-07-23 16:20:00,Reopened

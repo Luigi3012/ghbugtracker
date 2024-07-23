@@ -23,7 +23,7 @@ export const BugList: React.FC<BugListOwnProps> = ({ bugs, removeBugById }) => {
 				</ListItem>
 			);
 		});
-	}, [bugs]);
+	}, [bugs, removeBugById]);
 
 	return (
 		<Container className={style.wrapper}>

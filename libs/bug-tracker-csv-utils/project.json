@@ -1,0 +1,19 @@
+{
+	"name": "bug-tracker-csv-utils",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/bug-tracker-csv-utils/src",
+	"projectType": "library",
+	"tags": [],
+	"targets": {
+		"build": {
+			"executor": "@nx/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/bug-tracker-csv-utils",
+				"main": "libs/bug-tracker-csv-utils/src/index.ts",
+				"tsConfig": "libs/bug-tracker-csv-utils/tsconfig.lib.json",
+				"assets": ["libs/bug-tracker-csv-utils/*.md"]
+			}
+		}
+	}
+}
