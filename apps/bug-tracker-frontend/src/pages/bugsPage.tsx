@@ -19,7 +19,7 @@ const BugsPage: React.FC = () => {
 			<Grid container spacing={2}>
 				<Grid item xs={6}>
 					<Paper>
-						<BugTrackingForm addBug={addBug} />
+						<BugTrackingForm bugs={bugs} addBug={addBug} removeBugById={removeBugById} />
 					</Paper>
 				</Grid>
 				<Grid item xs={6}>
