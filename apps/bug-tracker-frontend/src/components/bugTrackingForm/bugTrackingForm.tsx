@@ -5,7 +5,7 @@ import { useBugForm } from "../../hooks/useBugForm";
 import style from "./bugTrackingForm.module.scss";
 export type BugTrackingFormOwnProps = {
 	addBug: (bug: Bug) => Promise<void>;
-	removeBugById: (id: string) => Promise<void>;
+	removeBugById: (id: string) => void;
 	bugs: Bug[];
 };
 
@@ -21,22 +21,24 @@ export const BugTrackingForm: React.FC<BugTrackingFormOwnProps> = ({ bugs, addBu
 				</MenuItem>
 			))
 			.filter(b => b.key !== bug.id);
+
 		allBugs.push(
 			<MenuItem key={"none"} value={"None"}>
 				None
 			</MenuItem>
 		);
+
 		return allBugs;
 	}, [bug.id, bugs]);
 
 	return (
 		<Container className={style.wrapper}>
 			<Box component="form" onSubmit={handleSubmit}>
-				<h2 className={style.title}>Report new bug or provide existing ID to delete existing bug</h2>
+				<h2 className={style.title}>Report new bug or delete existing</h2>
 				{isExistingBug && <Alert severity="warning">Bug with ID {bug.id} already exists and will be deleted on submit.</Alert>}
 				<TextField
 					fullWidth
-					label="Bug Id"
+					label="Bug ID"
 					name="id"
 					value={bug.id}
 					onChange={handleInputChange}
@@ -44,6 +46,7 @@ export const BugTrackingForm: React.FC<BugTrackingFormOwnProps> = ({ bugs, addBu
 					multiline
 					rows={1}
 					required={true}
+					helperText="Provide existing ID to delete bug or use list"
 				/>
 				<TextField
 					fullWidth
@@ -59,7 +62,7 @@ export const BugTrackingForm: React.FC<BugTrackingFormOwnProps> = ({ bugs, addBu
 				<TextField fullWidth label="Link" name="link" value={bug.link} onChange={handleInputChange} margin="normal" required={false} />
 				<FormControl fullWidth margin="normal">
 					<InputLabel id="parentId-label">Parent Id</InputLabel>
-					<Select labelId="parentId-label" id="parentId" value={bug?.parentId} label="Age" onChange={handleParentIdChange}>
+					<Select labelId="parentId-label" id="parentId" value={bug?.parentId ?? "None"} label="Age" onChange={handleParentIdChange}>
 						{possibleParentIds}
 					</Select>
 				</FormControl>

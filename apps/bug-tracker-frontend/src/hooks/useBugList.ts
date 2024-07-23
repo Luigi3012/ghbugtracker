@@ -36,6 +36,14 @@ export const useBugList = () => {
 		}
 	};
 
+	const clearBugAlert = (type: "success" | "error") => {
+		if (type === "success") {
+			setBugsSuccess(undefined);
+		} else {
+			setBugsError(undefined);
+		}
+	};
+
 	useEffect(() => {
 		const loadBugsFromApi = async () => {
 			try {
@@ -50,5 +58,5 @@ export const useBugList = () => {
 		loadBugsFromApi();
 	}, []);
 
-	return { bugs, bugsError, bugsSuccess, removeBugById, addBug };
+	return { bugs, bugsError, bugsSuccess, removeBugById, addBug, clearBugAlert };
 };

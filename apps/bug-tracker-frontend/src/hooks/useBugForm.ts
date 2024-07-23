@@ -3,7 +3,7 @@ import { Bug } from "@ghbugtracker/ghbugtracker-types";
 import type { SelectChangeEvent } from "@mui/material";
 import { ChangeEvent, FormEvent, useMemo, useState } from "react";
 
-export const useBugForm = (addBug: (bug: Bug) => Promise<void>, removeBugById: (id: string) => Promise<void>, bugs: Bug[]) => {
+export const useBugForm = (addBug: (bug: Bug) => Promise<void>, removeBugById: (id: string) => void, bugs: Bug[]) => {
 	const [bug, setBug] = useState<Bug>(createEmptyBug());
 
 	const isExistingBug = useMemo(() => {
@@ -16,6 +16,7 @@ export const useBugForm = (addBug: (bug: Bug) => Promise<void>, removeBugById: (
 
 	const handleParentIdChange = (e: SelectChangeEvent) => {
 		const value = e.target.value as string;
+
 		if (value && value !== "None") {
 			setBug({ ...bug, parentId: e.target.value });
 		}
@@ -23,9 +24,10 @@ export const useBugForm = (addBug: (bug: Bug) => Promise<void>, removeBugById: (
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+
 		if (isExistingBug) {
 			removeBugById(bug.id);
-		} else if (bug.link && bug.description) {
+		} else {
 			addBug(bug);
 		}
 		setBug(createEmptyBug());
