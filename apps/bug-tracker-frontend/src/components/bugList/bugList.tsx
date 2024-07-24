@@ -14,9 +14,18 @@ export const BugList: React.FC<BugListOwnProps> = ({ bugs, removeBugById }) => {
 		return bugs.map(bug => {
 			return (
 				<ListItem key={bug.id}>
-					<ListItemText primary={`${bug.id}: ${bug.description}`} secondary={bug.link}>
-						<p>{bug.status}</p>
-					</ListItemText>
+					<ListItemText
+						primary={`${bug.id}: ${bug.description}`}
+						secondary={
+							<div>
+								{bug.link}
+								<br />
+								Status: {bug.status}
+								<br />
+								{bug.parentId && <>Parent ID: {bug.parentId}</>}
+							</div>
+						}
+					></ListItemText>
 					<ListItemIcon title={"Delete"} onClick={() => removeBugById(bug.id)} sx={{ "&:hover": { color: "black" } }}>
 						<DeleteForeverIcon />
 					</ListItemIcon>
