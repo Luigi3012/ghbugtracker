@@ -6,6 +6,8 @@ It includes a front-end built with Vite, React and Material-UI, a back-end power
 
 Disclaimer: This is small exercise not a real application.
 
+![Application screenshot](image.png)
+
 ## How to use
 
 Application is very simple, it consists of simple page containg both bug tracking form and list of all reported bugs.
