@@ -1,4 +1,4 @@
-import { Bug } from "@ghbugtracker/ghbugtracker-types";
+import { Bug } from "@ghbugtracker/bug-tracker-types";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Container, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { useMemo } from "react";

@@ -1,4 +1,4 @@
-import type { Bug } from "@ghbugtracker/ghbugtracker-types";
+import type { Bug } from "@ghbugtracker/bug-tracker-types";
 import { Alert, Box, Button, Container, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { useMemo } from "react";
 import { useBugForm } from "../../hooks/useBugForm";

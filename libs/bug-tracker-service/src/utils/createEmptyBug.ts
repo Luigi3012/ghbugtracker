@@ -1,4 +1,4 @@
-import { Bug, BugStatus } from "@ghbugtracker/ghbugtracker-types";
+import { Bug, BugStatus } from "@ghbugtracker/bug-tracker-types";
 
 export const createEmptyBug = (): Bug => {
 	return {

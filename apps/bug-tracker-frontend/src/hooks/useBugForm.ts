@@ -1,5 +1,5 @@
 import { createEmptyBug } from "@ghbugtracker/bug-tracker-service";
-import { Bug } from "@ghbugtracker/ghbugtracker-types";
+import { Bug } from "@ghbugtracker/bug-tracker-types";
 import type { SelectChangeEvent } from "@mui/material";
 import { ChangeEvent, FormEvent, useMemo, useState } from "react";
 

@@ -1,5 +1,5 @@
 import { deleteBugById, loadBugs, saveBug } from "@ghbugtracker/bug-tracker-service";
-import type { Bug } from "@ghbugtracker/ghbugtracker-types";
+import type { Bug } from "@ghbugtracker/bug-tracker-types";
 
 import { useEffect, useState } from "react";
 

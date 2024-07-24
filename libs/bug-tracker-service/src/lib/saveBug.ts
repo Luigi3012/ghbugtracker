@@ -1,4 +1,4 @@
-import type { Bug } from "@ghbugtracker/ghbugtracker-types";
+import type { Bug } from "@ghbugtracker/bug-tracker-types";
 
 export async function saveBug(bug: Bug): Promise<boolean> {
 	try {

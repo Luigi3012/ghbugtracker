@@ -1,4 +1,4 @@
-import { BugStatus, type Bug } from "@ghbugtracker/ghbugtracker-types";
+import { BugStatus, type Bug } from "@ghbugtracker/bug-tracker-types";
 import * as fs from "fs";
 import { saveBugsToCsv } from "./saveBugsToCsv";
 import * as constants from "./utils/database";

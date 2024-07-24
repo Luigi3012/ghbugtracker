@@ -1,4 +1,4 @@
-import type { Bug, BugStatus } from "@ghbugtracker/ghbugtracker-types";
+import type { Bug, BugStatus } from "@ghbugtracker/bug-tracker-types";
 
 import { parse } from "csv-parse";
 import * as fs from "fs";

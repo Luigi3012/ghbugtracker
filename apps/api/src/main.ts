@@ -1,5 +1,5 @@
 import { deleteBugFromCsv, loadBugsFromCsv, saveBugsToCsv } from "@ghbugtracker/bug-tracker-csv-utils";
-import { Bug } from "@ghbugtracker/ghbugtracker-types";
+import { Bug } from "@ghbugtracker/bug-tracker-types";
 import express from "express";
 import * as path from "path";
 

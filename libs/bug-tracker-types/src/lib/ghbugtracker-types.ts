@@ -1,3 +1,3 @@
 export function ghbugtrackerTypes(): string {
-  return "ghbugtracker-types";
+	return "ghbugtracker-types";
 }

@@ -1,0 +1,19 @@
+{
+	"name": "bug-tracker-types",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/bug-tracker-types/src",
+	"projectType": "library",
+	"tags": [],
+	"targets": {
+		"build": {
+			"executor": "@nx/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/bug-tracker-types",
+				"main": "libs/bug-tracker-types/src/index.ts",
+				"tsConfig": "libs/bug-tracker-types/tsconfig.lib.json",
+				"assets": ["libs/bug-tracker-types/*.md"]
+			}
+		}
+	}
+}
