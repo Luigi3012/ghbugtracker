@@ -35,7 +35,7 @@ To run tests use `nx test` command e.g. `nx test bug-tracker-frontend` or `nx te
 As this is just a small exercise, room for improvement is huge.
 However error handling and presentation could be handled more nicelly, presenting more information why certain action failed.
 
-Frontend could benefit from use context of redux, if new functionality should be added.
+Frontend could benefit from use of context or redux, if new functionality should be added.
 Also test coverage could be always higher.
 
 ### Docker
