@@ -1,6 +1,6 @@
 import { Bug } from "@ghbugtracker/bug-tracker-types";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { Container, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { Container, IconButton, List, ListItem, ListItemText } from "@mui/material";
 import { useMemo } from "react";
 import style from "./bugList.module.scss";
 
@@ -26,9 +26,9 @@ export const BugList: React.FC<BugListOwnProps> = ({ bugs, removeBugById }) => {
 							</div>
 						}
 					></ListItemText>
-					<ListItemIcon title={"Delete"} onClick={() => removeBugById(bug.id)} sx={{ "&:hover": { color: "black" } }}>
+					<IconButton title={"Delete"} onClick={() => removeBugById(bug.id)} sx={{ "&:hover": { color: "black" } }}>
 						<DeleteForeverIcon />
-					</ListItemIcon>
+					</IconButton>
 				</ListItem>
 			);
 		});
