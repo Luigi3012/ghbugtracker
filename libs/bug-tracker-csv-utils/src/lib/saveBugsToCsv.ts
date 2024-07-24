@@ -4,7 +4,9 @@ import { DB_FILE_PATH } from "./utils/database";
 
 export function saveBugsToCsv(bugs: Bug[]): boolean {
 	try {
-		const csvData = bugs.map(bug => `${bug.id},${bug.parentId},${bug.description},${bug.status}`).join("\n");
+		const csvData = bugs
+			.map(bug => `${bug.id},${bug.description || ""},${bug.link || ""},${bug.parentId || ""},${bug.creationTimestamp},${bug.status}`)
+			.join("\n");
 		fs.appendFileSync(DB_FILE_PATH, csvData);
 		return true;
 	} catch (error) {
