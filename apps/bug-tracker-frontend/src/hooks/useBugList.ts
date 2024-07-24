@@ -34,6 +34,8 @@ export const useBugList = () => {
 			if (wasAdded) {
 				setBugs([...bugs, bug]);
 				setBugsSuccess("Bug saved successfully!");
+			} else {
+				setBugsError("Failed to save bug.");
 			}
 		} catch (error) {
 			const errorMsg = "Failed to save bug. " + error;

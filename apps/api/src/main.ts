@@ -5,6 +5,7 @@ import * as path from "path";
 
 const app = express();
 const API_PATH = "/api/bugs";
+app.use(express.json());
 
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 
@@ -33,6 +34,7 @@ app.delete(API_PATH + "/:id", async (req, res) => {
 });
 
 app.post(API_PATH, async (req, res) => {
+	console.log("POST in API", req.body);
 	const bug = req.body as Bug;
 
 	try {
@@ -44,8 +46,9 @@ app.post(API_PATH, async (req, res) => {
 		}
 		res.status(201).send("Bug saved successfully.");
 	} catch (error) {
-		console.error("Error saving bug:", error);
-		res.status(500).send("Failed to save bug.");
+		const message = error.message || "Failed to save bug.";
+		console.error(message);
+		res.status(500).send(message);
 	}
 });
 
