@@ -1,0 +1,19 @@
+{
+	"name": "bug-tracker-service",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/bug-tracker-service/src",
+	"projectType": "library",
+	"tags": [],
+	"targets": {
+		"build": {
+			"executor": "@nx/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/bug-tracker-service",
+				"main": "libs/bug-tracker-service/src/index.ts",
+				"tsConfig": "libs/bug-tracker-service/tsconfig.lib.json",
+				"assets": ["libs/bug-tracker-service/*.md"]
+			}
+		}
+	}
+}

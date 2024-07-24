@@ -16,7 +16,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@ghbugtracker/bug-tracker-csv-utils": ["libs/bug-tracker-csv-utils/src/index.ts"],
-			"@ghbugtracker/ghbugtracker-service": ["libs/ghbugtracker-service/src/index.ts"],
+			"@ghbugtracker/bug-tracker-service": ["libs/bug-tracker-service/src/index.ts"],
 			"@ghbugtracker/ghbugtracker-types": ["libs/ghbugtracker-types/src/index.ts"]
 		}
 	},
