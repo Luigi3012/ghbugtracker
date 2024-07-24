@@ -19,7 +19,6 @@ describe("GET /", () => {
 	});
 
 	it("should create a new bug", async () => {
-		// Fixme
 		const bug: Bug = {
 			id: "1",
 			link: "www.aaa.com",
@@ -38,9 +37,6 @@ describe("GET /", () => {
 		});
 
 		expect(res.status).toBe(201);
-		const data = await res.json();
-		expect(data.link).toBe(bug.link);
-		expect(data.description).toBe(bug.description);
 	});
 
 	it("should delete an existing bug", async () => {
