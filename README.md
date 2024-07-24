@@ -25,5 +25,5 @@ To run tests use `nx test` command e.g. `nx test bug-tracker-frontend` or `nx te
 
 ### E2E tests
 
-- API tests - Run `nx e2e api-e2e` to run API tests
+- API tests - First serve API project in one terminal `nx serve api` and then run `nx e2e api-e2e` to run API tests
 - Nx creates skeleton project for Frontend Cypress tests, but I didn't manage to write any. So this time it is empty.
