@@ -27,3 +27,15 @@ To run tests use `nx test` command e.g. `nx test bug-tracker-frontend` or `nx te
 
 - API tests - First serve API project in one terminal `nx serve api` and then run `nx e2e api-e2e` to run API tests
 - Nx creates skeleton project for Frontend Cypress tests, but I didn't manage to write any. So this time it is empty.
+
+### Possible improvements
+
+As this is just a small exercise, room for improvement is huge.
+However error handling and presentation could be handled more nicelly, presenting more information why certain action failed.
+
+Frontend could benefit from use context of redux, if new functionality should be added.
+Also test coverage could be always higher.
+
+### Docker
+
+Currently I am working on moving backend and frontend to docker container, will update later.
