@@ -7,7 +7,7 @@ export function saveBugsToCsv(bugs: Bug[]): boolean {
 		const csvData = bugs
 			.map(bug => `${bug.id},${bug.description || ""},${bug.link || ""},${bug.parentId || ""},${bug.creationTimestamp},${bug.status}`)
 			.join("\n");
-		fs.appendFileSync(DB_FILE_PATH, csvData);
+		fs.appendFileSync(DB_FILE_PATH, csvData + "\n");
 		return true;
 	} catch (error) {
 		return false;
