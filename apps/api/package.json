@@ -1,0 +1,14 @@
+{
+	"name": "bug-tracker-api",
+	"version": "1.0.0",
+	"description": "Minimal API to support the bug tracker app",
+	"author": "Lukas Belaj",
+	"license": "MIT",
+	"dependencies": {
+		"tslib": "^2.3.0",
+		"axios": "^1.6.0",
+		"csv-parse": "^5.5.6",
+		"express": "^4.18.1",
+		"dotenv": "^16.4.5"
+	}
+}
