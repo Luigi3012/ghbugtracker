@@ -36,6 +36,7 @@ As this is just a small exercise, room for improvement is huge.
 However error handling and presentation could be handled more nicelly, presenting more information why certain action failed.
 
 Frontend could benefit from use of context or redux, if new functionality should be added.
+Some form field validation would be also reasonable, e.g. for link.
 Also test coverage could be always higher.
 
 ### Docker
