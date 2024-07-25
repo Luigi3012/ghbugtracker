@@ -1,17 +1,18 @@
 import { BugStatus, type Bug } from "@ghbugtracker/bug-tracker-types";
-import axios from "axios";
+import { config } from "dotenv";
 
 describe("GET /", () => {
+	const baseUrl = config().parsed?.API_URL;
 	it("should return a message", async () => {
-		const res = await axios.get(`http://localhost:3333/api`);
+		const res = await fetch(baseUrl);
 
 		expect(res.status).toBe(200);
-		const data = res.data;
+		const data = await res.json();
 		expect(data).toEqual({ message: "Welcome to bugs api!" });
 	});
 
 	it("should return a list of bugs", async () => {
-		const res = await fetch(`http://localhost:3333/api/bugs`);
+		const res = await fetch(`${baseUrl}/bugs`);
 
 		expect(res.status).toBe(200);
 		const data = await res.json();
@@ -28,7 +29,7 @@ describe("GET /", () => {
 			creationTimestamp: new Date(),
 		};
 
-		const res = await fetch(`http://localhost:3333/api/bugs`, {
+		const res = await fetch(`${baseUrl}/bugs`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -42,7 +43,7 @@ describe("GET /", () => {
 	it("should delete an existing bug", async () => {
 		const bugId = "1";
 
-		const res = await fetch(`http://localhost:3333/api/bugs/${bugId}`, {
+		const res = await fetch(`${baseUrl}/bugs/${bugId}`, {
 			method: "DELETE",
 		});
 

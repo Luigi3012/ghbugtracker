@@ -41,4 +41,14 @@ Also test coverage could be always higher.
 
 ### Docker
 
-Currently I am working on moving backend and frontend to docker container, will update later.
+#### Backend
+
+Run `nx run api:docker-build `
+Launch container with options:
+
+- Host port 3333 (I'll make this configurable with FE dockerization)
+- Environment variable DB_FILE_PATH with value `api/db.csv`
+
+#### Frontend
+
+Currently I am working on moving frontend to docker container, will update later.
