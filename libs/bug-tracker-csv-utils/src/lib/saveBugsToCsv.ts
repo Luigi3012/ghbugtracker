@@ -1,6 +1,6 @@
 import type { Bug } from "@ghbugtracker/bug-tracker-types";
 import * as fs from "fs";
-import { DB_FILE_PATH } from "./utils/database";
+import { DB_FILE_PATH } from "./database";
 
 export function saveBugsToCsv(bugs: Bug[]): boolean {
 	try {

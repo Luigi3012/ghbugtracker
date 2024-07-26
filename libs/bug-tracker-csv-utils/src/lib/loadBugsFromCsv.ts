@@ -2,7 +2,7 @@ import type { Bug, BugStatus } from "@ghbugtracker/bug-tracker-types";
 
 import { parse } from "csv-parse";
 import * as fs from "fs";
-import { DB_FILE_PATH } from "./utils/database";
+import { DB_FILE_PATH } from "./database";
 
 export function loadBugsFromCsv(): Promise<Bug[]> {
 	return new Promise((resolve, reject) => {

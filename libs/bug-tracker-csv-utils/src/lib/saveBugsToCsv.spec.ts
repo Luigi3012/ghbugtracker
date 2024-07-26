@@ -1,8 +1,8 @@
 import { BugStatus, type Bug } from "@ghbugtracker/bug-tracker-types";
 import * as fs from "fs";
+import * as constants from "./database";
+import { DB_FILE_PATH } from "./database";
 import { saveBugsToCsv } from "./saveBugsToCsv";
-import * as constants from "./utils/database";
-import { DB_FILE_PATH } from "./utils/database";
 
 describe("saveBugsToCsv", () => {
 	it("should save bugs to CSV file", () => {
