@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
 	root: __dirname,
-	cacheDir: "../../node_modules/.vite/apps/ghbugtracker",
+	cacheDir: "../../node_modules/.vite/apps/bug-tracker-frontend",
 
 	server: {
 		port: 4200,
@@ -32,7 +32,7 @@ export default defineConfig({
 	// },
 
 	build: {
-		outDir: "../../dist/apps/ghbugtracker",
+		outDir: "../../dist/apps/bug-tracker-frontend",
 		emptyOutDir: true,
 		reportCompressedSize: true,
 		commonjsOptions: {
