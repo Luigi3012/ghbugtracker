@@ -47,7 +47,6 @@ Run `nx run api:docker-build `
 Launch container with options:
 
 - Host port 3333 (I'll make this configurable with FE dockerization)
-- Environment variable DB_FILE_PATH with value `api/db.csv`
 
 #### Frontend
 

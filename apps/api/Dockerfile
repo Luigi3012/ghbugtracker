@@ -21,6 +21,9 @@ RUN chown -R api:api .
 # The bundled output will include external dependencies.
 RUN npm --prefix api --omit=dev -f install
 
+# Set environment variables. You can also pass these during runtime.
+ENV DB_FILE_PATH=api/db.csv
+
 EXPOSE 3333
 
 CMD [ "node", "api/main.js" ]
