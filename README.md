@@ -41,13 +41,26 @@ Also test coverage could be always higher.
 
 ### Docker
 
-#### Backend
+#### Docker compose
+
+This repo contains docker-compose file with everything set up. Make sure you have docker available.
+
+1. Then just run `docker-compose build` in this repository to build images.
+2. `docker-compose up` to run the containers.
+3. Check working application on [http://localhost/]
+
+#### Backend (Obsolete)
+
+Backend image is build with command
 
 Run `nx run api:docker-build `
 Launch container with options:
 
-- Host port 3333 (I'll make this configurable with FE dockerization)
+- Host port 3333
 
-#### Frontend
+#### Frontend (Obsolete)
 
-Currently I am working on moving frontend to docker container, will update later.
+Run `nx run bug-tracker-frontend:docker-build `
+Launch container with options:
+
+- Map some host port where you want to use your app

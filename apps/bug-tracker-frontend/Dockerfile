@@ -19,6 +19,7 @@ RUN npm run nx build bug-tracker-frontend
 
 # Stage 2: Serve the React app using a lightweight web server
 FROM nginx:stable-alpine
+COPY apps/bug-tracker-frontend/default.conf /etc/nginx/conf.d/default.conf
 
 # Copy the build output to the nginx html folder
 COPY dist/apps/bug-tracker-frontend /usr/share/nginx/html
