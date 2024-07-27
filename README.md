@@ -25,7 +25,7 @@ This repo contains docker-compose file with everything set up. Make sure you hav
 2. `docker-compose up` to run the containers.
 3. Check working application on [http://localhost/]
 
-### Backend (Obsolete)
+#### Backend (Obsolete)
 
 Backend image is build with command
 
