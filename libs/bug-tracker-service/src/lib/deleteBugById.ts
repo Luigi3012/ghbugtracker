@@ -1,5 +1,5 @@
-export async function deleteBugById(bugId: string): Promise<boolean> {
-	const response = await fetch(`/api/bugs/${bugId}`, {
+export async function deleteBugById(bugId: string, baseApiUrl: string): Promise<boolean> {
+	const response = await fetch(`${baseApiUrl}/bugs/${bugId}`, {
 		method: "DELETE",
 	});
 
