@@ -3,6 +3,8 @@ import type { Bug } from "@ghbugtracker/bug-tracker-types";
 
 import { useEffect, useState } from "react";
 
+const baseApiUrl = "/api";
+
 /**
  * Custom hook to handle bug list which is fetched from the API. Using service.
  * This hook basically handles state of this simple application and also handles communication with service functions that communicate with API.
@@ -16,7 +18,7 @@ export const useBugList = () => {
 
 	const removeBugById = async (id: string): Promise<void> => {
 		try {
-			const wasDeleted = await deleteBugById(id);
+			const wasDeleted = await deleteBugById(id, baseApiUrl);
 			if (wasDeleted) {
 				setBugs(bugs.filter(bug => bug.id !== id));
 				setBugsSuccess("Bug deleted successfully!");
@@ -30,7 +32,7 @@ export const useBugList = () => {
 
 	const addBug = async (bug: Bug): Promise<void> => {
 		try {
-			const wasAdded = await saveBug(bug);
+			const wasAdded = await saveBug(bug, baseApiUrl);
 			if (wasAdded) {
 				setBugs([...bugs, bug]);
 				setBugsSuccess("Bug saved successfully!");
@@ -55,7 +57,7 @@ export const useBugList = () => {
 	useEffect(() => {
 		const loadBugsFromApi = async () => {
 			try {
-				setBugs(await loadBugs());
+				setBugs(await loadBugs(baseApiUrl));
 			} catch (error) {
 				const errorMsg = "Failed to load bugs. " + error;
 				console.error(errorMsg);

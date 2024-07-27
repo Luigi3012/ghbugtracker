@@ -1,9 +1,9 @@
 import type { Bug } from "@ghbugtracker/bug-tracker-types";
 
-export async function saveBug(bug: Bug): Promise<boolean> {
+export async function saveBug(bug: Bug, baseApiUrl: string): Promise<boolean> {
 	let wasSaved = false;
 	try {
-		const result = await fetch("api/bugs", {
+		const result = await fetch(`${baseApiUrl}/bugs`, {
 			method: "POST",
 			mode: "cors",
 			headers: {
