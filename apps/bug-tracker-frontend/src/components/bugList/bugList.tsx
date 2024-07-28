@@ -17,12 +17,15 @@ export const BugList: React.FC<BugListOwnProps> = ({ bugs, removeBugById }) => {
 					<ListItemText
 						primary={`${bug.id}: ${bug.description}`}
 						secondary={
-							<div>
-								{bug.link}
-								<br />
-								Status: {bug.status}
-								<br />
-								{bug.parentId && <>Parent ID: {bug.parentId}</>}
+							<div className={style["bug-data"]}>
+								<span>
+									Link:{" "}
+									<a href={bug.link} target="blank">
+										{bug.link}
+									</a>
+								</span>
+								<span>Status: {bug.status}</span>
+								{bug.parentId && <span>Parent ID: {bug.parentId}</span>}
 							</div>
 						}
 					></ListItemText>
@@ -35,7 +38,7 @@ export const BugList: React.FC<BugListOwnProps> = ({ bugs, removeBugById }) => {
 	}, [bugs, removeBugById]);
 
 	return (
-		<Container className={style.wrapper}>
+		<Container className={style["wrapper"]}>
 			<h2>Reported Bugs</h2>
 			<List>{bugListItems}</List>
 		</Container>
